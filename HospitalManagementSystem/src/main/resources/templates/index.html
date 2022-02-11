@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org" th:fragment="Layout(content)">
+<html lang="en" xmlns:th="https://www.thymeleaf.org"
+	th:fragment="Layout(content)">
 <head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
@@ -13,7 +14,7 @@
 	crossorigin="anonymous">
 
 <title>Hospital Management System</title>
-<link rel="stylesheet" type="text/css" th:href="@{css/style.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{css/style.css}" />
 </head>
 <body>
 
@@ -39,14 +40,12 @@
 		</div>
 	</nav>
 	<div class="sidebar">
-	<a th:href="@{/dash}" class ="item">home</a> <br>
-	<a href="#" class ="item">emailid</a><br>
-	<a href="#" class ="item">address</a><br>
-	<a href="#" class ="item">mobile number</a><br>
+		<a th:href="@{/dash}" class="item">home</a> <br> <a href="#"
+			class="item">emailid</a><br> <a href="#" class="item">address</a><br>
+		<a href="#" class="item">mobile number</a><br>
 	</div>
 	<div class="content">
-		<div th:replace=${content}>
-		</div>
+		<div th:replace=${content}></div>
 	</div>
 	<!-- Optional JavaScript; choose one of the two! -->
 

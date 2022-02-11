@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="/home" method="post">
+username<input name="name" placeholder="enter name" type="text">
+address<input name="address" placeholder="enter adress" type="text">
+<input type="submit" value="submit">
+
+
+</form>
+</body>
+</html>

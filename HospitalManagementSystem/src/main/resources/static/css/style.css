@@ -1,14 +1,30 @@
-body{
-	background-color: white;
-}
-.content{
-	
-	margin-left: 20%;
-}
-.sidebar a { display:block; 
 
- width:100%;
- padding: 10px 25px; 
- color:gray; 
- text-decoration: none; 
- } 
+body
+{
+	background-color: violet;
+}
+
+.content
+{
+	  margin-left: 15%;
+	
+}
+
+
+.sidebar
+{
+	background-color: white;
+	width:12%;
+	height: 100%;
+	position:fixed;
+	
+}
+.sidebar a
+{
+	display:block;
+	width:100%;
+	padding: 10px 25px;
+	color:gray;
+	text-decoration: none;
+	
+}
