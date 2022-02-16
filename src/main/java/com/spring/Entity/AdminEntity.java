@@ -3,8 +3,8 @@ import javax.persistence.*;
 
 @Entity
 public class AdminEntity {
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int adminId;
 	@Column
 	private String adminLogin;

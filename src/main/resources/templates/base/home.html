@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymleaf.org" th:replace="base/base::Layout(~{::section})">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base/base::Layout(~{::section})">
 <head>
 <meta charset="ISO-8859-1">
-<title> Home </title>
-</head>
-
+<title>Hospital Management System</title>
 
 <body>
-	<section>
-			<h1> Home Page </h1>
+<section>
+	<div class="sidebar">
+	
+
+	<a href="dashboard" class="item">DashBoard</a>
+	<a href="adminlogin" class="item">Admin</a>
+	<a href="doctor" class="item">Doctor</a>
+	<a href="staff" class="item">Staff</a>
+	
+
+	</div>	
+	
 	</section>
+	
+
 </body>
 </html>

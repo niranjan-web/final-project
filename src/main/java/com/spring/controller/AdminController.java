@@ -17,11 +17,12 @@ public class AdminController {
 	public String login(@ModelAttribute AdminEntity adminEntity) {
 		AdminEntity admin = adminService.findByAdminLoginAndAdminPassword(adminEntity.getAdminLogin(),
 				adminEntity.getAdminPassword());
+		System.out.println(adminEntity.getAdminLogin()+ adminEntity.getAdminPassword());
 
 		if (Objects.isNull(admin)) {
-			return "redirect:/login";
+			return "/admin/adminlogin";
 		} else {
-			return "redirect:/admin";
+			return "/admin/admin";
 		}
 	}
 }

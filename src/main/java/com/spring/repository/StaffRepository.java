@@ -6,5 +6,7 @@ import com.spring.Entity.StaffEntity;
 
 public interface StaffRepository extends JpaRepository<StaffEntity, Integer>
 {
+	public StaffEntity findByStaffMailAndStaffPassword(String staffMail, String staffPassword);
+
 
 }

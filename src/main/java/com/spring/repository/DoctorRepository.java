@@ -6,4 +6,6 @@ import com.spring.Entity.DoctorEntity;
 public interface DoctorRepository extends JpaRepository<DoctorEntity, Integer>
 {
 
+	DoctorEntity findByDoctorMailAndDoctorPassword(String doctorMail, String doctorPassword);
+
 }

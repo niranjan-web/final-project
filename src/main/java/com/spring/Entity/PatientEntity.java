@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class PatientEntity {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int patientId;
 	@Column
 	private int RoomNo;	
@@ -21,13 +21,13 @@ public class PatientEntity {
 	@Column
 	private String patientAddress;
 	@Column
-	private String patientAdmitDate;
+	private String admit_date;
 	@Column
-	private String patientDischargeDate;
+	private String discharge_date;
 	@Column
-	private String patientProblems;
+	private String patient_problem;
 	@Column
-	private String patientReport;
+	private String patient_report;
 	
 	
 	@ManyToOne(cascade=CascadeType.ALL)
@@ -80,37 +80,37 @@ public class PatientEntity {
 	public void setPatientAddress(String patientAddress) {
 		this.patientAddress = patientAddress;
 	}
-	public String getPatientAdminDate() {
-		return patientAdmitDate;
+	public String getAdmit_date() {
+		return admit_date;
 	}
-	public void setPatientAdmitDate(String patientAdmitDate) {
-		this.patientAdmitDate = patientAdmitDate;
+	public void setAdmit_date(String admit_date) {
+		this.admit_date = admit_date;
 	}
-	public String getPatientDischargeDate() {
-		return patientDischargeDate;
+	public String getDischarge_date() {
+		return discharge_date;
 	}
-	public void setPatientDischargeDate(String patientDischargeDate) {
-		this.patientDischargeDate = patientDischargeDate;
+	public void setDischarge_date(String discharge_date) {
+		this.discharge_date = discharge_date;
 	}
-	public String getPatientProblems() {
-		return patientProblems;
+	public String getPatient_problem() {
+		return patient_problem;
 	}
-	public void setPatientProblems(String patientProblems) {
-		this.patientProblems = patientProblems;
+	public void setPatient_problem(String patient_problem) {
+		this.patient_problem = patient_problem;
 	}
-	public String getPatientReport() {
-		return patientReport;
+	public String getPatient_report() {
+		return patient_report;
 	}
-	public void setPatientReport(String patientReport) {
-		this.patientReport = patientReport;
+	public void setPatient_report(String patient_report) {
+		this.patient_report = patient_report;
 	}
 	public PatientEntity() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public PatientEntity(int roomNo, int patientId, String patientName, String patientAge, String patientGender,
-			String patientContact, String patientAddress, String patientAdmitDate, String patientDischargeDate,
-			String patientProblems, String patient_report) {
+			String patientContact, String patientAddress, String admit_date, String discharge_date,
+			String patient_problem, String patient_report) {
 		super();
 		RoomNo = roomNo;
 		this.patientId = patientId;
@@ -119,18 +119,18 @@ public class PatientEntity {
 		this.patientGender = patientGender;
 		this.patientContact = patientContact;
 		this.patientAddress = patientAddress;
-		this.patientAdmitDate = patientAdmitDate;
-		this.patientDischargeDate = patientDischargeDate;
-		this.patientProblems = patientProblems;
-		this.patientReport = patient_report;
+		this.admit_date = admit_date;
+		this.discharge_date = discharge_date;
+		this.patient_problem = patient_problem;
+		this.patient_report = patient_report;
 	}
 	@Override
 	public String toString() {
 		return "PatientEntity [RoomNo=" + RoomNo + ", patientId=" + patientId + ", patientName=" + patientName
 				+ ", patientAge=" + patientAge + ", patientGender=" + patientGender + ", patientContact="
-				+ patientContact + ", patientAddress=" + patientAddress + ", patientAdmitDate=" + patientAdmitDate
-				+ ", patientDischargeDate=" + patientDischargeDate + ", patient_problem=" + patientProblems + ", patient_report="
-				+ patientReport + "]";
+				+ patientContact + ", patientAddress=" + patientAddress + ", admit_date=" + admit_date
+				+ ", discharge_date=" + discharge_date + ", patient_problem=" + patient_problem + ", patient_report="
+				+ patient_report + "]";
 	}
 	
 	

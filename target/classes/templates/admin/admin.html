@@ -5,86 +5,123 @@
 
 <head>
 <meta charset="ISO-8859-1">
-<head>
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Bootstrap CSS -->
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-	crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-<title>adminlogged In</title>
-
-<style>
-body {
-	background-color: violet;
+    <title> adminlogged In </title>
+    
+    <style>
+    
+  
+    
+	.card{
+	
+		margin-top:100px;
+		margin-left:200px ;
+		margin-right:50px ;
+		text-align: center;
+	
+	
+	}
+    
+    body
+    {
+    	background: url(../images/hos.png);
+    	background-size: cover;
+    }
+    
+    
+.sidebar
+{
+	background-color:white;
+	width:12%;
+	height: 100%;
+	position:fixed;
+	
 }
-
-.card {
-	margin: 50px;
-	text-align: center;
+.sidebar a
+{
+	display:block;
+	width:100%;
+	padding: 10px 25px;
+	color:grey;
+	text-decoration: none;
+	
 }
-</style>
-</head>
+    </style>
+  </head>
+  
+  
+  
+  <body>
+  
+    <div class="sidebar">
+    <a href="home" class="item">Home</a>
+  	<a href="dashboard" class="item">DashBoard</a>
+	<a href="index" class="item">Log Out</a>
+	</div>	
 
+  	<div class="card-group">	     
+   	  
+	 <div class="card" style="width: 10rem;">
+	  
+	  <img src="/images/doc.jpg" class="card-img-top" alt="...">
+	  
+	  <div class="card-body">
+	  <h5 class="card-title">Doctor Portal</h5>
+	
+	  <a href="doctorsdetail" class="btn btn-primary"> View Details</a>
+	   <a href="doctorform" class="btn btn-primary"> Add Doctor</a>
+	  </div>
+	  </div>
+	  
+	       
+	  
+	  <div class="card" style="width: 10rem;">
+	  
+	  <img src="/images/staff.png" class="card-img-top" alt="...">
+	  
+	  <div class="card-body">
+	  <h5 class="card-title">Staff Portal</h5>
+	  <a href="staffsdetail" class="btn btn-primary"> View Details</a>
+	   <a href="staffform" class="btn btn-primary"> Add Staff</a>
+	  </div>
+	  </div>
+	  
+	   
+	  
+	   <div class="card" style="width: 10rem;">
+	  
+	  <img src="/images/patient.jpg" class="card-img-top" alt="...">
+	  
+	  <div class="card-body">
+	  <h5 class="card-title">Patient Portal</h5>
+	  <a href="patientsdetail" class="btn btn-primary"> View Details </a>
+	  </div>
+	  </div>
+	  
+	
+	  
+	    
+	  
+   </div>	
+	     
 
+    <!-- Optional JavaScript; choose one of the two! -->
 
-<body>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-	<div class="card-group">
-
-		<div class="card" style="width: 10rem;">
-
-			<img src="/images/doc.jpg" class="card-img-top" alt="...">
-
-			<div class="card-body">
-				<h5 class="card-title">Doctor</h5>
-				<a href="doctor" class="btn btn-primary"> Portal </a>
-			</div>
-		</div>
-
-
-		<div class="card" style="width: 10rem;">
-
-			<img src="/images/staff.png" class="card-img-top" alt="...">
-
-			<div class="card-body">
-				<h5 class="card-title">Staff</h5>
-				<a href="staff" class="btn btn-primary"> Portal </a>
-			</div>
-		</div>
-
-
-		<div class="card" style="width: 10rem;">
-
-			<img src="/images/patient.jpg" class="card-img-top" alt="...">
-
-			<div class="card-body">
-				<h5 class="card-title">Patient</h5>
-				<a href="patient" class="btn btn-primary"> Portal </a>
-			</div>
-		</div>
-	</div>
-
-
-
-	<!-- Optional JavaScript; choose one of the two! -->
-
-	<!-- Option 1: Bootstrap Bundle with Popper -->
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-		crossorigin="anonymous"></script>
-
-	<!-- Option 2: Separate Popper and Bootstrap JS -->
-	<!--
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
-
-</body>
+    
+  </body>
 </html>

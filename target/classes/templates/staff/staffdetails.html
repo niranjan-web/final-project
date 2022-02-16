@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+   
+    <style> 
+   body 
+   {
+   	background-color:lightblue;
+   	}
+   	
+   
+   </style>
+   
+  </head>
+ 
+  <body>    
+		<div class ="container">
+		
+		<div class = "row">
+			<h1> Staff Database </h1>
+		</div>
+		
+		<div class = "row">
+			<div class = "col-lg-3">
+			<a th:href = "staff" class = "btn btn-dark btn-sm mb-2"> Go Back </a>
+				<a th:href = "staffform" class = "btn btn-dark btn-sm mb-2"> Add Staff</a>
+			</div>
+		</div>
+		<table class = "table table-striped table-bordered">
+			<thead class = "table-light">
+				<tr>
+					<th> ID </th>
+					<th> Name</th>
+					<th> Age</th>
+					<th> Gender </th>
+					<th> Email </th>
+					<th> DOB </th>
+					<th> Qualifications </th>
+					<th> Contact </th>
+					<th> Address </th>
+					<th> Password </th>
+					<th> Actions </th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr th:each = "staff: ${staffform}">
+					<td th:text = "${staff.staffId}"></td>
+					<td th:text = "${staff.staffName}"></td>
+					<td th:text = "${staff.staffAge}"></td>
+					<td th:text = "${staff.staffGender}"></td>
+					<td th:text = "${staff.staffMail}"></td>
+					<td th:text = "${staff.staffDOB}"></td>
+					<td th:text = "${staff.staffQualification}"></td>
+					<td th:text = "${staff.staffContact}"></td>
+					<td th:text = "${staff.staffAddress}"></td>
+					<td th:text = "${staff.staffPassword}"></td>
+					<td>
+					<a  class = "btn btn-light btn-sm mb-2"> update </a>
+					<a  th:href="@{'/deletestaff'+${staff.staffId}}" class = "btn btn-light btn-sm mb-2"> delete </a>						 
+					</td>
+				</tr>
+			</tbody>
+		
+		</table>
+		
+	</div>
+
+</body>
+</html>
