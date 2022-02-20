@@ -10,72 +10,35 @@
     rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
     crossorigin="anonymous">
 
-    <title> Admin Login </title>
+    <title> Admin Login page </title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
   
-    <style>
-
-     .cardType
-			{
-
-				padding: 40px;
-				margin-top:100px;
-				margin-bottom:80px;
-				margin-left:100px;
-				margin-right:50%;
-				
-			}
-			 
-			     body
-			{
-				width:100%;
-				height:93vh;
-				background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url(../images/hos.png);
-				background-size: cover;
-				color:white;
-			}
-			
-			
-     </style>
-    
+        
   </head>
   
   <body>
   <a href="home" class="btn btn-light"> < </a>
-		 <div class="container">
-		    <div class="row">
-		    
-		         <div  class="cols-8 offset-2">
-		             <div  class="cardType">
-		                 
-		                <form th:action="@{/adminLoginCheck}" method="post">
-		            
-		            	  <div class="mb-3">
-						    <label for="exampleInputEmail1" class="form-label"><b>Login Id</b></label>
-						    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-						     name="adminLogin">
-						  
-						  </div>
-						  <div class="mb-3">
-						    <label for="exampleInputPassword1" class="form-label"><b>Password</b></label>
-						    <input type="password"  class="form-control" id="exampleInputPassword1"
-						     name="adminPassword">
-						  </div>
+		 <div class="center">
+      <h1>Admin Login</h1>
+      <form th:action="@{/adminLoginCheck}" method="post">
 
-						 
-						  
-						 <div class="col-md-12 text-center">
-						  <button type="submit" class="btn btn-light"><b>Login</b></button>
-						  </div>
-						</form>
-						
-
-		             </div>
-	         
-		         </div>
-		    
-		    </div>
-		 
-		 </div>
+        <div class="txt_field">
+          <input type="text" required name="adminLogin">
+          <span></span>
+          <label>Username</label>
+        </div>
+        <div class="txt_field">
+          <input type="password" required name="adminPassword">
+          <span></span>
+          <label>Password</label>
+        </div>
+        <div class="pass"></div>
+        <input type="submit" value="Login">
+        <div class="signup_link">
+          <a href=""></a>
+        </div>
+      </form>
+    </div>
 		    
     
     

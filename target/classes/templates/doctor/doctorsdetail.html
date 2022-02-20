@@ -8,15 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-	 <style> 
-   body 
-   {
-   	background-color:lightblue;
-   	}
-   	
-   
-   </style>
-   
+		
    
   </head>
  
@@ -36,7 +28,7 @@
 			</div>
 		</div>
 		<table class = "table table-striped table-bordered">
-			<thead class = "table-light">
+			<thead class = "table-dark">
 				<tr>
 					<th> ID </th>
 					<th> Name</th>
@@ -44,6 +36,7 @@
 					<th> Gender </th>
 					<th> Email </th>
 					<th style="width:200px;"> DOB </th>
+					<th style="width:200px;"> Photo </th>
 					<th> Qualifications </th>
 					<th> Department </th>
 					<th> Contact </th>
@@ -61,14 +54,15 @@
 					<td th:text = "${doctor.doctorGender}"></td>
 					<td th:text = "${doctor.doctorMail}"></td>
 					<td th:text = "${doctor.doctorDOB}"></td>
+					<td th:text = "${doctor.doctorPic}"></td>
 					<td th:text = "${doctor.doctorQualification}"></td>
 					<td th:text = "${doctor.doctorDepartment}"></td>
 					<td th:text = "${doctor.doctorContact}"></td>
 					<td th:text = "${doctor.doctorAddress}"></td>
 					<td th:text = "${doctor.doctorPassword}"></td>
 					<td>
-					<a  class = "btn btn-light btn-sm mb-2"> update </a>
-					<a  th:href="@{'/deletedoctor'+${doctor.doctorId}}" class = "btn btn-light btn-sm mb-2"> delete </a>						 
+					<a  th:href="@{'/updateDoctor'+${doctor.doctorId}}" class = "btn btn-primary btn-sm mb-2"> update </a>
+					<a  th:href="@{'/deletedoctor'+${doctor.doctorId}}" class = "btn btn-primary btn-sm mb-2"> delete </a>						 
 					</td>
 					
 				</tr>

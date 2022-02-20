@@ -46,6 +46,9 @@ body
 }
 
 /* login page */
+h1{
+	color:black;
+}
 body{
   margin: 0;
   padding: 0;

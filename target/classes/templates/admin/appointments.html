@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<style>
+
+</style>
+  	 
+  </head>
+ 
+  <body>    
+  
+		<div class ="container" >
+		
+		<div class = "row">
+			<h1> Appointments </h1>
+		</div>
+		
+		<div class = "row">
+			<div class = "col-lg-3">
+			<a th:href = "admin" class = "btn btn-dark btn-sm mb-2"> Go Back </a>
+		</div>
+		</div>
+		<table class = "table table-striped table-bordered" >
+			<thead class = "table-dark">
+				<tr>
+				   
+					<th> Token No  </th>
+					<th> Patient Type </th>
+					<th> Name</th>
+					<th> Age</th>
+					<th> Gender </th>
+					<th> Problem </th>
+					<th> Date </th>
+					<th> Time </th>
+					<th> Contact </th>
+					<th> Action </th>
+					
+
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr th:each = "admin: ${appointmentform}">			
+					
+					<td th:text = "${admin.tokenNumber}"></td>
+					<td th:text = "${admin.patientType}"></td>
+					<td th:text = "${admin.patientName}"></td>
+					<td th:text = "${admin.patientAge}"></td>
+					<td th:text = "${admin.patientGender}"></td>
+					<td th:text = "${admin.patientProblem}"></td>
+					<td th:text = "${admin.fixedDate}"></td>
+					<td th:text = "${admin.fixedTime}"></td>
+					<td th:text = "${admin.patientContact}"></td>
+					<td>
+					<a  th:href="@{'/deleteappoints'+${admin.tokenNumber}}" 
+					class = "btn btn-primary btn-sm mb-2"><b> Cancel </b></a>						 
+					</td>
+				</tr>
+			</tbody>
+		
+		</table>
+		
+	</div>
+</div>
+</body>
+</html>

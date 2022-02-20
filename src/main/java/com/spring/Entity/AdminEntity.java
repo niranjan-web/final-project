@@ -1,6 +1,7 @@
 package com.spring.Entity;
 import javax.persistence.*;
 
+
 @Entity
 public class AdminEntity {
 	

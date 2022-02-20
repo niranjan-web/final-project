@@ -1,0 +1,66 @@
+
+  
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+   
+   
+  </head>
+ 
+  <body> 
+  
+      <section>   
+		<div class ="container">
+		
+		<div class = "row">
+			<h1> Doctor Database </h1>
+		</div>
+		
+		<div class = "row">
+			<div class = "col-lg-3">
+			<a th:href = "doctor" class = "btn btn-dark btn-sm mb-2"> Go Back </a>
+			</div>
+		</div>
+		<table class = "table table-striped table-bordered">
+			<thead class = "table-dark">
+				<tr>
+					<th> ID </th>
+					<th> Name</th>
+					<th> Age</th>
+					<th> Gender </th>
+					<th> Email </th>
+					<th style="width:200px;"> DOB </th>
+					<th> Qualifications </th>
+					<th> Department </th>
+					<th> Contact </th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr th:each = "doctor: ${doctorform}">
+					<td th:text = "${doctor.doctorId}"></td>
+					<td th:text = "${doctor.doctorName}"></td>
+					<td th:text = "${doctor.doctorAge}"></td>
+					<td th:text = "${doctor.doctorGender}"></td>
+					<td th:text = "${doctor.doctorMail}"></td>
+					<td th:text = "${doctor.doctorDOB}"></td>
+					<td th:text = "${doctor.doctorQualification}"></td>
+					<td th:text = "${doctor.doctorDepartment}"></td>
+					<td th:text = "${doctor.doctorContact}"></td>										
+				</tr>
+			</tbody> 
+		
+		</table>
+		
+	</div>
+</section>
+</body>
+</html>
