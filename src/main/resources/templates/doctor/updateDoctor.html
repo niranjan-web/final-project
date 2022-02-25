@@ -27,8 +27,8 @@
           <div class="col"style="margin-top: 10px">
         <div class="card">
           <div class="card-body" >
-          
-  <form action="/doctorsdetail{${session.doctorId}}" th:object="${doctor}" method="post">
+<!--           <a th:href="@{'/deletecontact'+${contact.cid}}" class = "settings btn btn-secondary btn-sm mb-2"> Delete</a>  -->
+  <form th:action="@{'/updateDoctorDetail'+${session.doctorId}}" th:object="${doctor}" method="post">
                   
             
               <div class="form-group">

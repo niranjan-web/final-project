@@ -45,6 +45,14 @@ body
 	
 }
 
+#carouselExampleIndicators
+{
+	margin-left:160px;
+	height:60px;
+	background-position: center;
+	background-size: cover;
+}
+
 /* login page */
 h1{
 	color:black;

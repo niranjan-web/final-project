@@ -16,4 +16,5 @@ public interface DoctorService {
 	public DoctorEntity findByDoctorId(int id);
 
 	public void deleteByDoctorId(int id);
+	public void updateByDoctorId(DoctorEntity doctorEntity);
 }

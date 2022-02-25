@@ -99,4 +99,25 @@ public class DoctorController {
 		return"doctor/updateDoctor";
 	}
 	
+	@PostMapping("/updateDoctorDetail{id}")
+	private String updateDoctorDetail(@PathVariable int id, 
+			@ModelAttribute DoctorEntity doctor, Model model,HttpSession session) 
+	{
+		model.addAttribute(model);
+		session.setAttribute("doctorId", id);
+		DoctorEntity doctorupdate  =doctorService.findByDoctorId(id);
+		
+		
+		if(doctorupdate!=null)
+		{
+			model.addAttribute("doctor",doctor);
+			 doctorService.adddoctor(doctor);
+		}
+		else
+		{
+			model.addAttribute("doctor",new DoctorEntity());
+		}
+		return "redirect:/doctorsdetail";
+	}
+	
 }
