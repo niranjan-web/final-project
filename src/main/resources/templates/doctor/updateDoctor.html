@@ -13,6 +13,14 @@
   
   </head>
   <body>
+  <script>
+  function alertFunction()
+  {
+  alert("Your details updated successfully");
+  }
+  
+  
+  </script>
    
   <div style="background: radial-gradient(circle at 10% 20%, rgb(0, 102, 161) 0%,
    rgb(0, 68, 108) 90.1%);" class="page-holder bg-cover">
@@ -28,7 +36,7 @@
         <div class="card">
           <div class="card-body" >
 <!--           <a th:href="@{'/deletecontact'+${contact.cid}}" class = "settings btn btn-secondary btn-sm mb-2"> Delete</a>  -->
-  <form th:action="@{'/updateDoctorDetail'+${session.doctorId}}" th:object="${doctor}" method="post">
+  <form th:action="@{/updateDoctorDetail{id} (id=${doctor.doctorId})}" th:object="${doctor}" method="post">
                   
             
               <div class="form-group">
@@ -111,7 +119,7 @@
 			  </div><br>
 			  
 			  <div class="col-md-12 text-center">
-              <button  type="submit" class="btn btn-primary btn-lg btn-block" > Submit </button>
+              <button onclick="alertFunction()" class="btn btn-primary btn-lg btn-block" > Update </button>
          	  </div>
          	  
          </div>

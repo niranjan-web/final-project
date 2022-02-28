@@ -28,7 +28,7 @@
         <div class="card">
           <div class="card-body" >
           
-  <form action="/staffsdetail{${session.staffId}}" th:object="${staff}" method="post">
+  <form th:action="@{/updateStaff{id} (id=${staff.staffId})}" th:object="${staff}" method="post">
                   
             
               <div class="form-group">
@@ -111,7 +111,7 @@
 			  </div><br>
 			  
 			  <div class="col-md-12 text-center">
-              <button  type="submit" class="btn btn-primary btn-lg btn-block" > Submit </button>
+              <button  type="submit" class="btn btn-primary btn-lg btn-block" > Update </button>
          	  </div>
          	  
          </div>

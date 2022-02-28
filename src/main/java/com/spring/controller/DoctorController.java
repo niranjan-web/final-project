@@ -80,44 +80,50 @@ public class DoctorController {
 		return "doctor/doctorsdetail";
 	}
 	
+
+	
 	@GetMapping("/updateDoctor{id}")
-	private String update(@PathVariable int id, 
-			@ModelAttribute DoctorEntity doctor, Model model,HttpSession session) 
+	public String update(@PathVariable int id, Model model) 
 	{
-		model.addAttribute(model);
-		session.setAttribute("doctorId", id);
-		DoctorEntity doctorupdate  =doctorService.findByDoctorId(id);
+		model.addAttribute("doctor", doctorService.findByDoctorId(id));
+		return "doctor/updateDoctor";
 		
-		if(doctorupdate!=null)
-		{
-			model.addAttribute("doctor",doctorupdate);
-		}
-		else
-		{
-			model.addAttribute("doctor",new DoctorEntity());
-		}
-		return"doctor/updateDoctor";
 	}
+	
+	
 	
 	@PostMapping("/updateDoctorDetail{id}")
 	private String updateDoctorDetail(@PathVariable int id, 
-			@ModelAttribute DoctorEntity doctor, Model model,HttpSession session) 
+			@ModelAttribute("doctor") DoctorEntity doctor, Model model) 
 	{
-		model.addAttribute(model);
-		session.setAttribute("doctorId", id);
+		
 		DoctorEntity doctorupdate  =doctorService.findByDoctorId(id);
 		
 		
 		if(doctorupdate!=null)
 		{
-			model.addAttribute("doctor",doctor);
-			 doctorService.adddoctor(doctor);
+			doctorupdate.setDoctorId(id);
+			doctorupdate.setDoctorName(doctor.getDoctorName());
+			doctorupdate.setDoctorAge(doctor.getDoctorAge());
+			doctorupdate.setDoctorGender(doctor.getDoctorGender());
+			doctorupdate.setDoctorDOB(doctor.getDoctorDOB());
+			doctorupdate.setDoctorQualification(doctor.getDoctorQualification());
+			doctorupdate.setDoctorDepartment(doctor.getDoctorDepartment());
+			doctorupdate.setDoctorContact(doctor.getDoctorContact());
+			doctorupdate.setDoctorAddress(doctor.getDoctorAddress());
+			doctorupdate.setDoctorMail(doctor.getDoctorMail());
+			doctorupdate.setDoctorPassword(doctor.getDoctorPassword());
+			doctorupdate.setDoctorPic(doctor.getDoctorPic());
+			
+			doctorService.adddoctor(doctorupdate);
+			return "redirect:/doctorsdetail";
+			
 		}
 		else
 		{
-			model.addAttribute("doctor",new DoctorEntity());
+			return "/doctor/doctor";
+			
 		}
-		return "redirect:/doctorsdetail";
 	}
 	
 }
