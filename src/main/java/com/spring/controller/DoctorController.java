@@ -66,6 +66,8 @@ public class DoctorController {
 		return"doctor/doctorsdetail";
 	}
 	
+	
+	
 	@GetMapping("/deletedoctor{id}")
 	private String delete(@PathVariable int id, Model model) 
 	{

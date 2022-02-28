@@ -28,7 +28,8 @@
         <div class="card">
           <div class="card-body" >
           
-  <form action="/patientsdetail{${session.patientId}}" th:object="${patient}" method="post">
+<form th:action= "@{updatePatient{id} (id=${patient.patientId})}"th:object="${patient}" method="post">       
+
                   
             
               <div class="form-group">
@@ -43,24 +44,22 @@
 				      
               <div class="form-group"><div class="col-md-11">
 			    <label for="validationServer03" class="form-label">Age</label>
-			    <input type="text" name="patientstaffAge" th:value="${patient.patientAge}" 
+			    <input type="text" name="patientAge" th:value="${patient.patientAge}" 
 			    class="form-control is-invalid" 
 			    id="validationServer03" aria-describedby="validationServer03Feedback" required >
 			    <div id="validationServer03Feedback" class="invalid-feedback">
 			  </div></div></div>
 			    
+			   <div class="form-group"><div class="col-md-11">
+			    <label for="validationServer03" class="form-label">Gender</label>
+			    <input type="text" name="patientGender" th:value="${patient.patientGender}" 
+			    class="form-control is-invalid" 
+			    id="validationServer03" aria-describedby="validationServer03Feedback" required >
+			    <div id="validationServer03Feedback" class="invalid-feedback">
+			  </div></div></div>
 			  
 			  
-			  
-              <div class="form-group"><div class="col-md-11">
-                 <label for="gender"> Gender </label>
-			     <select class="form-control" name="patientGender" id="exampleFormControlSelect1">
-			     <option>  select option   </option>
-			     <option>  Male       </option>
-			     <option>  Female     </option>
-			     </select>
-              </div></div>
-              
+             
             
             <div class="form-group"><div class="col-md-11">
 			    <label for="validationServer03" class="form-label">contact</label>
@@ -81,7 +80,7 @@
 			 
 			 
 			  
-			     <div class="col-md-3">
+			     <div class="col-md-8">
 			    <label for="validationServer03" class="form-label">Admit Date</label>
 			    <input type="datetime-local" name="admit_date" th:value="${patient.admit_date}"  
 			    class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required>
@@ -89,7 +88,7 @@
 			    </div></div>
 			  
 			  
-			   <div class="col-md-3">
+			   <div class="col-md-8">
 			    <label for="validationServer03" class="form-label">Discharge Date</label>
 			    <input type="datetime-local" name="discharge_date" th:value="${patient.discharge_date}"  
 			    class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required>
@@ -100,7 +99,7 @@
 		  	
 		  	 <div class="col-md-3">
 			    <label for="validationServer03" class="form-label">Patient Problem</label>
-			    <input type="text" name="patient_problem" th:value="${patient.patientProblem}" 
+			    <input type="text" name="patient_problem" th:value="${patient.patient_problem}" 
 			    class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required>
 			    <div id="validationServer03Feedback" class="invalid-feedback">
 			  
@@ -108,33 +107,24 @@
 			  </div>
   
 			
+			  <div class="form-group"><div class="col-md-11">
+			    <label for="validationServer03" class="form-label">Report</label>
+			    <input type="text" name="patient_report" th:value="${patient.patient_report}" 
+			    class="form-control is-invalid" 
+			    id="validationServer03" aria-describedby="validationServer03Feedback" required >
+			    <div id="validationServer03Feedback" class="invalid-feedback">
+			  </div></div></div>
 			
-			
-			
-			  
-			 <div class="col-md-3">
-			
-			    <label for="report"> Report </label>
-			    <select class="form-control" name="patient_report" id="exampleFormControlSelect1">
-			      <option>  select option   </option>
-			      <option>  Cured                         </option>
-			      <option>  Died                          </option>
-			      <option>  Regular Treatment             </option>
-			      <option>  Irregular Discharge           </option>
-			      <option>  Shifted for further Treatment </option>
-			    </select>
-			  </div>
-			 
 			 
 			 
 			 <div class="form-group"><div class="col-md-11">
 			    <label for="exampleFormControlFile1">Upload Photo</label>
 			    <input type="file" class="form-control-file" id="exampleFormControlFile1" 
-			    name="patientPic">
+			    name="patientPic" th:value="${patient.patientPic}" >
 			  </div></div><br>
 			  
 			  <div class="col-md-12 text-center">
-              <button  type="submit" class="btn btn-primary btn-lg btn-block" > Submit </button>
+              <button  type="submit" class="btn btn-primary btn-lg btn-block" > Update </button>
          	  </div>
          	</form>  
          	

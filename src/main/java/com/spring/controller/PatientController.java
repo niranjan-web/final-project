@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import com.spring.Entity.PatientEntity;
+import com.spring.Entity.StaffEntity;
 import com.spring.service.PatientService;
 
 @Controller
@@ -64,7 +65,7 @@ public class PatientController {
 	
 	}
 	
-	@GetMapping("/updatepatient{id}")
+	@GetMapping("/toupdatepatient{id}")
 	private String update(@PathVariable int id, @ModelAttribute PatientEntity patient, Model model,HttpSession session) 
 	{
 		model.addAttribute(model);
@@ -80,5 +81,38 @@ public class PatientController {
 			model.addAttribute("patient",new PatientEntity());
 		}
 		return"patient/updatepatient";
+	}
+	
+   @PostMapping("/updatePatient{id}")
+	private String update(@PathVariable int id, @ModelAttribute("patient") PatientEntity patient, Model model) 
+	{
+		PatientEntity patientupdate  = patientService.findByPatientId(id);
+		patientupdate.setPatientId(id);
+		PatientEntity entityObj = patientService.findByPatientId(id); 
+		if(entityObj!=null)
+		{
+			entityObj.setPatientId(id);
+			entityObj.setRoomNo(patient.getRoomNo());
+			entityObj.setPatientName(patient.getPatientName());
+			entityObj.setPatientAddress(patient.getPatientAddress());
+			entityObj.setPatientAge(patient.getPatientAge());
+			entityObj.setPatientGender(patient.getPatientGender());
+			entityObj.setPatientContact(patient.getPatientContact());
+			entityObj.setAdmit_date(patient.getAdmit_date());
+			entityObj.setDischarge_date(patient.getDischarge_date());
+			entityObj.setPatient_problem(patient.getPatient_problem());
+			entityObj.setPatient_report(patient.getPatient_report());
+			entityObj.setPatientPic(patient.getPatientPic());
+			
+			patientService.addpatient(entityObj);
+			
+			return "redirect:/patientsdetail";
+		
+		}
+		else
+		{
+			return "admin/admin";
+		}
+		
 	}
 }
